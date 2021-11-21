@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main/Water.gd" type="Script" id=1]
 [ext_resource path="res://Main/PlayerCharacter.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Player/Dolphin.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 5 )
@@ -26,7 +27,12 @@ smoothing_enabled = true
 collision_mask = 2
 
 [node name="HitBox" type="CollisionShape2D" parent="Player/Skin"]
+visible = false
 shape = SubResource( 1 )
+
+[node name="DolphinSprite" type="Sprite" parent="Player"]
+scale = Vector2( 0.103433, 0.103433 )
+texture = ExtResource( 3 )
 
 [node name="Sea" type="Area2D" parent="."]
 position = Vector2( 160, 180 )
