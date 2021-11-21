@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal change_level(level_index)
+
 onready var skin = $Skin
 onready var camera = $Cam
 
@@ -75,7 +77,7 @@ func get_input():
 	
 	return input_direction
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("Rise"):
 		change_state(states.RISING)
 
