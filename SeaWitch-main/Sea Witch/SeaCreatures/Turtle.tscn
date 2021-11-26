@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/SeaCreatures/turtle.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Swim"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.941927, 1 ) ]
+}
+
+[node name="Squid" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.998987, 1 )
+texture = ExtResource( 1 )
+offset = Vector2( 69.2034, -11.2938 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Swim = SubResource( 1 )
