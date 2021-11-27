@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/SeaCreatures/jellyfish.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Swim"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( -125.637, 0 ), Vector2( -125.637, -206.959 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( -2 ),
+"update": 0,
+"values": [ 0.729607 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( -2, -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 0.997926, 0.986127 ), Vector2( 0.997926, 1.15305 ), Vector2( 0.997926, 0.694268 ), Vector2( 0.997926, 1.4371 ) ]
+}
+
+[node name="Jellyfish" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -125.637, -1.02628 )
+rotation = 0.012734
+scale = Vector2( 0.997926, 0.993373 )
+texture = ExtResource( 1 )
+offset = Vector2( 69.2034, -11.2938 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Swim = SubResource( 1 )
